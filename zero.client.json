@@ -1,0 +1,46 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "loot:goblin_zero",
+			"min_engine_version": "1.21.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"poppy":    "textures/entity/name/poppy",
+				"tristana": "textures/entity/name/tristana",
+				"malvah":   "textures/entity/name/malvah",
+				"smug":     "textures/entity/name/smug",
+				"gobu":     "textures/entity/name/gobu",
+				"jackie":   "textures/entity/name/jackie"
+			},
+			"geometry": {
+				"default": "geometry.goblin_zero"
+			},
+			"animations": {
+				"stand":        "animation.idle.stand",
+				"blink":        "animation.idle.blink",
+				"anim_2":       "animation.idle.anim_2",
+				"walk":         "animation.move.walk",
+				"jump":         "animation.move.jump",
+				"fall":         "animation.move.fall",
+				"land":         "animation.move.land",
+				"sitting_0_1":  "animation.lock.sitting_0_1",
+				"ctrl_motion":  "controller.animation.goblin.motion"
+			},
+			"scripts": {
+				"animate": [
+					"ctrl_motion"
+				],
+				"pre_animation": [
+					"variable.name = query.has_property('loot:name') ? query.property('loot:name') : -1;",
+					"variable.do_anim2 = math.random(0, 100) < 0.5 ? 1.0 : 0.0;"
+				]
+			},
+			"render_controllers": [
+				"controller.render.goblin"
+			]
+		}
+	}
+}

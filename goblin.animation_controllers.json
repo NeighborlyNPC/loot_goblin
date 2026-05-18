@@ -1,0 +1,59 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.goblin.motion": {
+			"initial_state": "standing",
+			"states": {
+				"standing": {
+					"animations": [ "stand", "blink" ],
+					"transitions": [
+						{ "walking": "query.modified_move_speed > 0.1" },
+						{ "sitting": "query.has_property('loot:idle_pose') && query.property('loot:idle_pose') == 1" },
+						{ "anim_2": "!query.has_component('minecraft:is_tamed') && variable.do_anim2 == 1.0" },
+						{ "jumping": "query.is_jumping && query.is_on_ground == false" }
+					]
+				},
+				"walking": {
+					"animations": [ "walk" ],
+					"transitions": [
+						{ "standing": "query.modified_move_speed <= 0.1" },
+						{ "jumping": "query.is_jumping && query.is_on_ground == false" }
+					]
+				},
+				"sitting": {
+					"animations": [ "sitting_0_1" ],
+					"transitions": [
+						{ "standing": "query.has_property('loot:idle_pose') && query.property('loot:idle_pose') == 0" }
+					]
+				},
+				"anim_2": {
+					"animations": [ "anim_2" ],
+					"transitions": [
+						{ "standing": "query.all_animations_finished" }
+					]
+				},
+				"jumping": {
+					"animations": [ "jump" ],
+					"transitions": [
+						{ "falling": "query.is_on_ground == false && !query.is_jumping" },
+						{ "standing": "query.is_on_ground && query.modified_move_speed <= 0.1" },
+						{ "walking": "query.is_on_ground && query.modified_move_speed > 0.1" }
+					]
+				},
+				"falling": {
+					"animations": [ "fall" ],
+					"transitions": [
+						{ "landing": "query.is_on_ground" }
+					]
+				},
+				"landing": {
+					"animations": [ "land" ],
+					"transitions": [
+						{ "standing": "query.all_animations_finished && query.modified_move_speed <= 0.1" },
+						{ "walking": "query.all_animations_finished && query.modified_move_speed > 0.1" }
+					]
+				}
+			}
+		}
+	}
+}
