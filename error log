@@ -10,4 +10,4 @@
 
 [Molang][error]-variable.name >= 0 ? array.names[variable.name] : array.clothes[query.property('loot:clothes_index')] | Error: query.property: property does not exist, consider using query.has_property.
 
-she is now back to being called "unknown" , hit animations still doesn't play , 
+she is now back to being called "unknown" , hit animations still doesn't play , textures are just purple and black
