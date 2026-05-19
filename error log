@@ -1,0 +1,13 @@
+[Json][error]-loot goblin test (3) | actor_definitions | C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/behavior_packs/Inflatable(15)/BP | loot:goblin_zero | minecraft:entity | components | minecraft:nameable | default_name | child 'default_name' not valid here.
+
+[Localization][warning]-Line: 231 - Invalid lang file format. New line character was found while parsing key: 'skin.camoflauge skinpack.ironoreiron ore'.
+
+[Effects][error]-particles/burp_bubble.json | no valid version passed by the caller or found in the input
+
+[Effects][error]-particles/burp_bubble.json | Failed to load particle effect
+
+[Molang][error]-variable.name >= 0 ? array.names[variable.name] : array.skins[query.property('loot:skin_index')] | Error: query.property: property does not exist, consider using query.has_property.
+
+[Molang][error]-variable.name >= 0 ? array.names[variable.name] : array.clothes[query.property('loot:clothes_index')] | Error: query.property: property does not exist, consider using query.has_property.
+
+she is now back to being called "unknown" , hit animations still doesn't play , 
