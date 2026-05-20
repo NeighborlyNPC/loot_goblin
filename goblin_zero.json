@@ -1,0 +1,239 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "loot:goblin_zero",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"spawn_egg": {
+				"base_color": "#3a7a3a",
+				"overlay_color": "#c8a850"
+			},
+			"properties": {
+				"loot:hair_index": {
+					"type": "int",
+					"range": [ 0, 15 ],
+					"default": 0,
+					"client_sync": true
+				},
+				"loot:name": {
+					"type": "int",
+					"range": [ -1, 5 ],
+					"default": -1,
+					"client_sync": true
+				},
+				"loot:tamed": {
+					"type": "bool",
+					"default": false,
+					"client_sync": true
+				},
+				"loot:weapon_state": {
+					"type": "int",
+					"range": [ 0, 3 ],
+					"default": 0,
+					"client_sync": true
+				},
+				"loot:attacking": {
+					"type": "bool",
+					"default": false,
+					"client_sync": true
+				}
+			}
+		},
+		"component_groups": {
+			"loot:wild": {
+				"minecraft:type_family": {
+					"family": [ "goblin", "mob", "monster" ]
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 16,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"none_of": [
+											{ "test": "has_equipment", "subject": "other", "domain": "head", "value": "golden_helmet" },
+											{ "test": "has_equipment", "subject": "other", "domain": "torso", "value": "golden_chestplate" },
+											{ "test": "has_equipment", "subject": "other", "domain": "leg", "value": "golden_leggings" },
+											{ "test": "has_equipment", "subject": "other", "domain": "feet", "value": "golden_boots" }
+										]
+									}
+								]
+							},
+							"max_dist": 16
+						}
+					]
+				},
+				"minecraft:tameable": {
+					"probability": 0.2,
+					"tame_items": [
+						"minecraft:golden_carrot",
+						"minecraft:golden_apple",
+						"minecraft:glistering_melon_slice"
+					],
+					"tame_event": {
+						"event": "loot:on_tamed"
+					}
+				},
+				"minecraft:behavior.tempt": {
+					"priority": 3,
+					"speed_multiplier": 1.0,
+					"items": [
+						"minecraft:golden_carrot",
+						"minecraft:golden_apple",
+						"minecraft:glistering_melon_slice"
+					]
+				}
+			},
+			"loot:tamed": {
+				"minecraft:type_family": {
+					"family": [ "goblin", "mob", "golem" ]
+				},
+				"minecraft:is_tamed": {},
+				"minecraft:behavior.follow_owner": {
+					"priority": 4,
+					"speed_multiplier": 1.0,
+					"start_distance": 10,
+					"stop_distance": 2
+				},
+				"minecraft:behavior.tempt": {
+					"priority": 3,
+					"speed_multiplier": 1.0,
+					"items": [
+						"minecraft:golden_carrot",
+						"minecraft:golden_apple",
+						"minecraft:glistering_melon_slice"
+					]
+				},
+				"minecraft:behavior.owner_hurt_by_target": {
+					"priority": 1
+				},
+				"minecraft:behavior.owner_hurt_target": {
+					"priority": 2,
+					"entity_types": [
+						{
+							"filters": {
+								"none_of": [
+									{ "test": "is_family", "subject": "other", "value": "goblin" }
+								]
+							},
+							"max_dist": 16
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:nameable": {
+				"default_name": "Goblin"
+			},
+			"minecraft:type_family": {
+				"family": [ "goblin", "mob", "monster" ]
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.45
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:push_through": {
+				"value": 0.5
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:can_climb": {},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:movement": {
+				"value": 0.3
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": false,
+				"avoid_water": true,
+				"can_pass_doors": true,
+				"can_open_doors": true,
+				"avoid_damage_blocks": true
+			},
+			"minecraft:jump.static": {},
+			"minecraft:attack": {
+				"damage": 3
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 3,
+				"speed_multiplier": 1.0,
+				"track_target": true,
+				"require_complete_path": false
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1,
+				"alert_same_type": true
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 8,
+				"speed_multiplier": 0.8,
+				"interval": 120
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 10,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 10
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/goblin.loot.json"
+			},
+			"minecraft:persistent": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"trigger": {
+					"event": "loot:on_spawned"
+				}
+			},
+			"loot:on_spawned": {
+				"add": {
+					"component_groups": [ "loot:wild" ]
+				}
+			},
+			"loot:on_tamed": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [ "loot:wild" ]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [ "loot:tamed" ]
+						}
+					},
+					{
+						"set_property": {
+							"loot:tamed": true
+						}
+					}
+				]
+			}
+		}
+	}
+}

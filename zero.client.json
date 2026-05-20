@@ -1,0 +1,98 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "loot:goblin_zero",
+			"min_engine_version": "1.21.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"poppy":     "textures/entity/name/poppy",
+				"tristana":  "textures/entity/name/tristana",
+				"malvah":    "textures/entity/name/malvah",
+				"smug":      "textures/entity/name/smug",
+				"gobu":      "textures/entity/name/gobu",
+				"jackie":    "textures/entity/name/jackie",
+				"skin0":     "textures/entity/goblin/skin0",
+				"skin1":     "textures/entity/goblin/skin1",
+				"skin2":     "textures/entity/goblin/skin2",
+				"skin3":     "textures/entity/goblin/skin3",
+				"skin4":     "textures/entity/goblin/skin4",
+				"skin5":     "textures/entity/goblin/skin5",
+				"skin6":     "textures/entity/goblin/skin6",
+				"skin7":     "textures/entity/goblin/skin7",
+				"skin8":     "textures/entity/goblin/skin8",
+				"skin9":     "textures/entity/goblin/skin9",
+				"cloth0":    "textures/entity/outfit/cloth0",
+				"cloth1":    "textures/entity/outfit/cloth1",
+				"cloth2":    "textures/entity/outfit/cloth2",
+				"cloth3":    "textures/entity/outfit/cloth3",
+				"cloth4":    "textures/entity/outfit/cloth4",
+				"cloth5":    "textures/entity/outfit/cloth5",
+				"cloth6":    "textures/entity/outfit/cloth6",
+				"cloth7":    "textures/entity/outfit/cloth7",
+				"cloth8":    "textures/entity/outfit/cloth8",
+				"cloth9":    "textures/entity/outfit/cloth9",
+				"hair0":     "textures/entity/style/hair0",
+				"hair1":     "textures/entity/style/hair1",
+				"hair2":     "textures/entity/style/hair2",
+				"hair3":     "textures/entity/style/hair3",
+				"hair4":     "textures/entity/style/hair4",
+				"hair5":     "textures/entity/style/hair5",
+				"hair6":     "textures/entity/style/hair6",
+				"hair7":     "textures/entity/style/hair7",
+				"hair8":     "textures/entity/style/hair8",
+				"hair9":     "textures/entity/style/hair9",
+				"hair10":    "textures/entity/style/hair10",
+				"hair11":    "textures/entity/style/hair11",
+				"hair12":    "textures/entity/style/hair12",
+				"hair13":    "textures/entity/style/hair13",
+				"hair14":    "textures/entity/style/hair14",
+				"hair15":    "textures/entity/style/hair15"
+			},
+			"geometry": {
+				"default": "geometry.goblin_zero"
+			},
+			"animations": {
+				"stand":        "animation.idle.stand",
+				"walk":         "animation.move.walk",
+				"swim":         "animation.move.swim",
+				"anim_1":       "animation.idle.anim_1",
+				"anim_2":       "animation.idle.anim_2",
+				"sitting_0_1":  "animation.lock.sitting_0_1",
+				"death":        "animation.combat.death",
+				"punch":        "animation.combat.punch",
+				"blink":        "animation.layer.blink",
+				"jump":         "animation.layer.jump",
+				"fall":         "animation.layer.fall",
+				"land":         "animation.layer.land",
+				"target":       "animation.layer.target",
+				"hurt":         "animation.layer.hurt",
+				"ctrl_motion":  "controller.animation.goblin.motion",
+				"ctrl_combat":  "controller.animation.goblin.combat",
+				"ctrl_layer":   "controller.animation.goblin.layer",
+				"ctrl_land":    "controller.animation.goblin.land",
+				"ctrl_hurt":    "controller.animation.goblin.hurt"
+			},
+			"scripts": {
+				"animate": [
+					"ctrl_motion",
+					"ctrl_combat",
+					"ctrl_layer",
+					"ctrl_land",
+					"ctrl_hurt"
+				],
+				"pre_animation": [
+					"variable.name = query.has_property('loot:name') ? query.property('loot:name') : -1;",
+					"variable.do_anim1 = math.random(0, 100) < 0.5 ? 1.0 : 0.0;",
+					"variable.do_anim2 = math.random(0, 100) < 0.5 ? 1.0 : 0.0;",
+					"variable.do_blink = math.random(0, 100) < 0.5 ? 1.0 : 0.0;"
+				]
+			},
+			"render_controllers": [
+				"controller.render.goblin"
+			]
+		}
+	}
+}
