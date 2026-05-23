@@ -4,45 +4,13 @@
 
 [Log][error]-Trying to add an invalid classic skin. Cape is missing from kirara5d.
 
-[Json][inform]-loot goblin test (1) | actor_definitions | C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/behavior_packs/Inflatable(38)/BP | loot:goblin_zero | minecraft:entity | components | minecraft:damage_sensor | triggers | filters | {
+[Log][warning]-loot goblin test (2) | actor_definitions | C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/behavior_packs/Inflatable(44)/BP | loot:goblin_zero | minecraft:entity |  -> components -> minecraft:death_body_rotation: this component was found in the input, but is not present in the Schema
 
-   "test" : "has_damage",
+[Log][warning]-loot goblin test (2) | actor_definitions | C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/behavior_packs/Inflatable(44)/BP | loot:goblin_two | minecraft:entity |  -> components -> minecraft:death_body_rotation: this component was found in the input, but is not present in the Schema
 
-   "value" : "fatal"
+[Log][warning]-loot goblin test (2) | actor_definitions | C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/behavior_packs/Inflatable(44)/BP | loot:goblin_three | minecraft:entity |  -> components -> minecraft:death_body_rotation: this component was found in the input, but is not present in the Schema
 
-}
-
-[Json][error]-loot goblin test (1) | actor_definitions | C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/behavior_packs/Inflatable(38)/BP | loot:goblin_zero | minecraft:entity | components | minecraft:damage_sensor | triggers | filters | child 'filters' not valid here.
-
-[Json][inform]-loot goblin test (1) | actor_definitions | C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/behavior_packs/Inflatable(38)/BP | loot:goblin_two | minecraft:entity | components | minecraft:damage_sensor | triggers | filters | {
-
-   "test" : "has_damage",
-
-   "value" : "fatal"
-
-}
-
-[Json][error]-loot goblin test (1) | actor_definitions | C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/behavior_packs/Inflatable(38)/BP | loot:goblin_two | minecraft:entity | components | minecraft:damage_sensor | triggers | filters | child 'filters' not valid here.
-
-[Json][inform]-loot goblin test (1) | actor_definitions | C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/behavior_packs/Inflatable(38)/BP | loot:goblin_three | minecraft:entity | components | minecraft:damage_sensor | triggers | filters | {
-
-   "test" : "has_damage",
-
-   "value" : "fatal"
-
-}
-
-[Json][error]-loot goblin test (1) | actor_definitions | C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/behavior_packs/Inflatable(38)/BP | loot:goblin_three | minecraft:entity | components | minecraft:damage_sensor | triggers | filters | child 'filters' not valid here.
-
-[Json][inform]-loot goblin test (1) | actor_definitions | C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/behavior_packs/Inflatable(38)/BP | loot:goblin_one | minecraft:entity | components | minecraft:damage_sensor | triggers | filters | {
-
-   "test" : "has_damage",
-
-   "value" : "fatal"
-
-}
-
-[Json][error]-loot goblin test (1) | actor_definitions | C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/behavior_packs/Inflatable(38)/BP | loot:goblin_one | minecraft:entity | components | minecraft:damage_sensor | triggers | filters | child 'filters' not valid here.
+[Log][warning]-loot goblin test (2) | actor_definitions | C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/behavior_packs/Inflatable(44)/BP | loot:goblin_one | minecraft:entity |  -> components -> minecraft:death_body_rotation: this component was found in the input, but is not present in the Schema
 
 [Localization][warning]-Line: 231 - Invalid lang file format. New line character was found while parsing key: 'skin.camoflauge skinpack.ironoreiron ore'.
 
@@ -50,5 +18,21 @@
 
 [Effects][error]-particles/burp_bubble.json | Failed to load particle effect
 
-[Molang][error]-C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/resource_packs/Inflatable(31)/RP/animation_controllers/goblin_layer.animation_controllers.json | animation_controllers | controller.animation.goblin.layer | states | active | animations | blink | (query.life_time - variable.last_blink_time > (5.0 + math.random(0, 5)) && math.random(0, 100) < 5) ? (variable.last_blink_time = query.life_time, 1.0) : 0.0 | Error: complex expressions (contains either '=' or ';') must end with a ';'
+[Molang][error]-C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/resource_packs/Inflatable(38)/RP/animation_controllers/goblin_layer.animation_controllers.json | animation_controllers | controller.animation.goblin.layer | states | active | animations | blink | (query.life_time - variable.last_blink_time > (5.0 + math.random(0, 5)) && math.random(0, 100) < 5) ? (variable.last_blink_time = query.life_time, 1.0) : 0.0; | Error: Unexpected Comma ',' operator not inside an arguments list for a query, loop, or math function
+
+[Animation][error]-Error: can't find animation pop_real
+
+[Animation][error]-Error: can't find animation pop_fake
+
+[Animation][error]-Error: can't find animation ctrl_layer
+
+[Animation][error]-Error: can't find animation ctrl_land
+
+[Animation][error]-Error: can't find animation ctrl_hurt
+
+[Molang][error]-C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/resource_packs/Inflatable(38)/RP/animation_controllers/goblin.animation_controllers.json | animation_controllers | controller.animation.goblin.motion | states | standing | transitions | anim_2 | query.has_property('loot:tamed') && query.property('loot:tamed') == false && query.modified_move_speed <= 0.1 && query.life_time - variable.last_anim_time > 8.0 && math.random(0, 100) < 2 | Error: unhandled request for unknown variable 'variable.last_anim_time'
+
+[Animation][error]-Error: can't find animation drink
+
+[Localization][warning]-Line: 231 - Invalid lang file format. New line character was found while parsing key: 'skin.camoflauge skinpack.ironoreiron ore'.
 
