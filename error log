@@ -1,4 +1,8 @@
-[Json][error]-loot goblin test (3) | actor_definitions | C:/Users/Jaybomb64/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang/behavior_packs/Inflatable(15)/BP | loot:goblin_zero | minecraft:entity | components | minecraft:nameable | default_name | child 'default_name' not valid here.
+[Localization][warning]-Line: 231 - Invalid lang file format. New line character was found while parsing key: 'skin.camoflauge skinpack.ironoreiron ore'.
+
+[Log][error]-Trying to add an invalid classic skin. Cape is missing from WitherBoss.
+
+[Log][error]-Trying to add an invalid classic skin. Cape is missing from kirara5d.
 
 [Localization][warning]-Line: 231 - Invalid lang file format. New line character was found while parsing key: 'skin.camoflauge skinpack.ironoreiron ore'.
 
@@ -6,8 +10,83 @@
 
 [Effects][error]-particles/burp_bubble.json | Failed to load particle effect
 
-[Molang][error]-variable.name >= 0 ? array.names[variable.name] : array.skins[query.property('loot:skin_index')] | Error: query.property: property does not exist, consider using query.has_property.
+[Animation][inform]-entity/one.client.json | minecraft:client_entity | description | sounds | {
 
-[Molang][error]-variable.name >= 0 ? array.names[variable.name] : array.clothes[query.property('loot:clothes_index')] | Error: query.property: property does not exist, consider using query.has_property.
+   "burp" : "goblin.burp",
 
-she is now back to being called "unknown" , hit animations still doesn't play , textures are just purple and black, she can still attack while in water. i'm not sure what else to bring up
+   "drink" : "goblin.drink",
+
+   "eat" : "goblin.eat",
+
+   "hurt" : "goblin.hurt",
+
+   "idle" : "goblin.idle",
+
+   "pop" : "goblin.pop",
+
+   "rumble" : "goblin.rumble"
+
+}
+
+[Animation][error]-entity/one.client.json | minecraft:client_entity | description | sounds | child 'sounds' not valid here.
+
+[Animation][inform]-entity/three.client.json | minecraft:client_entity | description | sounds | {
+
+   "burp" : "goblin.burp",
+
+   "drink" : "goblin.drink",
+
+   "eat" : "goblin.eat",
+
+   "hurt" : "goblin.hurt",
+
+   "idle" : "goblin.idle",
+
+   "pop" : "goblin.pop",
+
+   "rumble" : "goblin.rumble"
+
+}
+
+[Animation][error]-entity/three.client.json | minecraft:client_entity | description | sounds | child 'sounds' not valid here.
+
+[Animation][inform]-entity/two.client.json | minecraft:client_entity | description | sounds | {
+
+   "burp" : "goblin.burp",
+
+   "drink" : "goblin.drink",
+
+   "eat" : "goblin.eat",
+
+   "hurt" : "goblin.hurt",
+
+   "idle" : "goblin.idle",
+
+   "pop" : "goblin.pop",
+
+   "rumble" : "goblin.rumble"
+
+}
+
+[Animation][error]-entity/two.client.json | minecraft:client_entity | description | sounds | child 'sounds' not valid here.
+
+[Animation][inform]-entity/zero.client.json | minecraft:client_entity | description | sounds | {
+
+   "burp" : "goblin.burp",
+
+   "drink" : "goblin.drink",
+
+   "eat" : "goblin.eat",
+
+   "hurt" : "goblin.hurt",
+
+   "idle" : "goblin.idle",
+
+   "pop" : "goblin.pop",
+
+   "rumble" : "goblin.rumble"
+
+}
+
+[Animation][error]-entity/zero.client.json | minecraft:client_entity | description | sounds | child 'sounds' not valid here.
+
